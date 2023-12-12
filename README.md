@@ -1,5 +1,3 @@
-# E-commerce
-
 # API Documentation
 
 ## User Authentication
@@ -309,5 +307,35 @@
 
 ### POST /review
 
-- **Description
+- **Description:**
+  - Allows a user to submit a review for a purchased product.
+
+- **Request:**
+  - Endpoint: `/review`
+  - Method: `POST`
+  - Headers:
+    - Authorization: Bearer `user_token`
+  - Body:
+    ```json
+    {
+      "product_id": "product_id",
+      "rating": "review_rating",
+      "comment": "review_comment",
+      "title": "review_title"
+    }
+    ```
+
+- **Response:**
+  - Success (HTTP 201):
+    ```json
+    {
+      "success": "Review Added Successfully"
+    }
+    ```
+  - Error (HTTP 422):
+    ```json
+    {
+      "error": "Please add all the fields"
+    }
+    ```
 
